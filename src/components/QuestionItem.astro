@@ -1,0 +1,12 @@
+---
+interface Props {
+  numeral: string;
+}
+const { numeral } = Astro.props;
+---
+<li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-x-4 sm:gap-x-6 items-baseline py-7 border-t border-rule">
+  <span class="type-mono text-ink-soft" aria-hidden="true">{numeral}</span>
+  <p class="font-serif italic type-body-lg text-ink">
+    <slot />
+  </p>
+</li>

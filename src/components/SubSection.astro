@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  variant?: 'card' | 'plain';
+  id?: string;
+}
+const { label, title, variant = 'card', id } = Astro.props;
+const wrapper = variant === 'card' ? 'card' : '';
+---
+<article id={id} class={`${wrapper} flex flex-col h-full`} data-fade>
+  <header class="flex items-baseline justify-between gap-4 mb-6">
+    <span class="type-mono text-ink-soft">{label}</span>
+  </header>
+  <h3 class="type-h2 font-mono mb-5">{title}</h3>
+  <div class="prose-col font-serif type-body-lg text-ink">
+    <slot />
+  </div>
+</article>

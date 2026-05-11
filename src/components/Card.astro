@@ -1,0 +1,13 @@
+---
+interface Props {
+  variant?: 'default' | 'tight';
+  class?: string;
+  as?: string;
+  id?: string;
+}
+const { variant = 'default', class: className = '', as: Tag = 'section', id } = Astro.props;
+const cls = variant === 'tight' ? 'card-tight' : 'card';
+---
+<Tag class={`${cls} ${className}`} id={id} data-fade>
+  <slot />
+</Tag>

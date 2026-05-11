@@ -1,0 +1,10 @@
+---
+interface Props {
+  variant?: 'solid' | 'ghost';
+}
+const { variant = 'solid' } = Astro.props;
+const cls = variant === 'ghost' ? 'chip chip-ghost' : 'chip';
+---
+<span class={cls}>
+  <slot />
+</span>

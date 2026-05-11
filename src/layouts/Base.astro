@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Cognición aumentada — definición, renuncias, acciones y preguntas abiertas. Un ensayo de Fabian Herrera.' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Fabian Herrera" />
+    <meta name="theme-color" content="#FAFAF7" />
+
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Geist+Mono:wght@100;200;400;500&display=swap"
+    />
+
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+  </head>
+  <body class="bg-bg text-ink">
+    <a href="#parte-i" class="skip-link type-mono">Saltar al contenido</a>
+
+    <header class="fixed top-0 inset-x-0 z-50 h-14 backdrop-blur-md bg-bg/75 border-b border-rule/60">
+      <nav class="max-w-site mx-auto h-full flex items-center justify-between px-5 sm:px-8">
+        <a href="#top" class="type-mono-md text-ink hover:text-ink font-medium">cognición aumentada</a>
+        <div class="type-mono text-ink-soft flex items-center gap-3 sm:gap-5">
+          <a href="#parte-i" aria-label="Ir a Parte I, síntesis">I</a>
+          <span aria-hidden="true">·</span>
+          <a href="#parte-ii" aria-label="Ir a Parte II, desarrollo">II</a>
+          <span aria-hidden="true">·</span>
+          <a href="#creditos" aria-label="Ir al pie y créditos">↓</a>
+        </div>
+      </nav>
+    </header>
+
+    <slot />
+
+    <script is:inline>
+      // Accordion expand/collapse
+      document.addEventListener('click', (e) => {
+        const btn = e.target instanceof Element ? e.target.closest('.expand-toggle') : null;
+        if (!btn) return;
+        const article = btn.closest('.expandable');
+        if (!article) return;
+        const open = article.getAttribute('data-open') === 'true';
+        article.setAttribute('data-open', open ? 'false' : 'true');
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        const sym = btn.querySelector('.toggle-symbol');
+        const lbl = btn.querySelector('.toggle-label');
+        if (sym) sym.textContent = open ? '+' : '–';
+        if (lbl) lbl.textContent = open ? 'leer' : 'cerrar';
+        const content = article.querySelector('.expandable-content');
+        if (content) content.setAttribute('aria-hidden', open ? 'true' : 'false');
+      });
+
+      // Fade-in on viewport
+      const fadeNodes = document.querySelectorAll('[data-fade]');
+      if ('IntersectionObserver' in window && fadeNodes.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+        );
+        fadeNodes.forEach((n) => observer.observe(n));
+      } else {
+        fadeNodes.forEach((n) => n.classList.add('in-view'));
+      }
+    </script>
+  </body>
+</html>

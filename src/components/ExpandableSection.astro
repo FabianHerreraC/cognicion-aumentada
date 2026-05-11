@@ -1,0 +1,47 @@
+---
+interface Props {
+  numeral: string;
+  title: string;
+  summary: string;
+  id?: string;
+}
+const { numeral, title, summary, id } = Astro.props;
+const slug = id ?? `s-${numeral.toLowerCase()}`;
+---
+<article
+  class="expandable card mb-5 sm:mb-6"
+  data-open="false"
+  data-fade
+>
+  <header class="grid grid-cols-12 gap-x-4 sm:gap-x-6 items-baseline">
+    <div class="col-span-12 sm:col-span-2 mb-3 sm:mb-0">
+      <span class="type-mono text-ink-soft">{numeral} / Sección</span>
+    </div>
+    <div class="col-span-12 sm:col-span-10">
+      <h3 class="type-h2 font-mono mb-3" id={slug}>{title}</h3>
+      <p class="type-body-lg text-ink-soft max-w-prose">{summary}</p>
+
+      <button
+        type="button"
+        class="expand-toggle type-mono mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-rule bg-bg text-ink hover:bg-ink hover:text-bg transition-colors"
+        aria-expanded="false"
+        aria-controls={`${slug}-content`}
+      >
+        <span class="toggle-symbol">+</span>
+        <span class="toggle-label normal-case tracking-normal">leer</span>
+      </button>
+
+      <div
+        id={`${slug}-content`}
+        class="expandable-content"
+        aria-hidden="true"
+      >
+        <div class="expandable-inner">
+          <div class="pt-10 sm:pt-12 font-serif type-body-lg text-ink">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</article>

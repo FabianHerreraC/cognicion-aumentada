@@ -1,0 +1,619 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ExpandableSection from '../components/ExpandableSection.astro';
+import QuestionItem from '../components/QuestionItem.astro';
+import SubSection from '../components/SubSection.astro';
+import InnerBlock from '../components/InnerBlock.astro';
+import Card from '../components/Card.astro';
+import Chip from '../components/Chip.astro';
+---
+<Base title="Cognición aumentada — Fabian Herrera">
+  <main id="top" class="pt-14">
+    {/* PORTADA */}
+    <section
+      class="max-w-site mx-auto px-5 sm:px-8 pt-16 sm:pt-24 pb-10 sm:pb-16"
+      aria-labelledby="portada-title"
+    >
+      <h1
+        id="portada-title"
+        class="type-display tracking-tight font-mono uppercase text-ink"
+        style="font-weight: 100;"
+        data-fade
+      >
+        Cognición<br />aumentada
+      </h1>
+
+      <hr class="hr-fine mt-10 sm:mt-14" />
+
+      <div class="mt-6 sm:mt-8" data-fade>
+        <p class="font-serif italic text-ink max-w-prose" style="font-size: clamp(1.125rem, 1.8vw, 1.5rem); line-height: 1.4;">
+          Definición, renuncias, acciones y preguntas abiertas.
+        </p>
+      </div>
+    </section>
+
+    {/* HERO CARD: Nota introductoria + chips */}
+    <section class="max-w-site mx-auto px-5 sm:px-8 pb-12 sm:pb-16">
+      <Card>
+        <div class="flex flex-wrap gap-2 mb-8 sm:mb-10">
+          <Chip>Síntesis</Chip>
+          <Chip>Desarrollo</Chip>
+          <Chip variant="ghost">Lectura en dos capas</Chip>
+        </div>
+
+        <div class="grid grid-cols-12 gap-x-4 sm:gap-x-6">
+          <div class="col-span-12 lg:col-span-8">
+            <p class="font-serif italic" style="font-size: clamp(1.375rem, 2.2vw, 1.875rem); line-height: 1.35;">
+              Este texto se lee en dos capas. La primera es una síntesis que puede recorrerse en
+              pocos minutos. La segunda desarrolla los conceptos en profundidad y los apoya en
+              sus referencias teóricas.
+            </p>
+          </div>
+          <div class="col-span-12 lg:col-span-4 mt-6 lg:mt-0 lg:pl-6 lg:border-l lg:border-rule">
+            <p class="type-mono text-ink-soft mb-3">Cómo leerlo</p>
+            <p class="font-serif type-body text-ink">
+              Cada sección de la versión extensa puede expandirse o contraerse para acompañar la
+              lectura al ritmo de quien lee.
+            </p>
+          </div>
+        </div>
+      </Card>
+    </section>
+
+    {/* TOC tree-style — scroll anchors */}
+    <section class="max-w-site mx-auto px-5 sm:px-8 pb-6 sm:pb-8">
+      <Card variant="tight">
+        <p class="type-mono text-ink-soft mb-6">Índice</p>
+        <pre class="tree m-0 whitespace-pre-wrap"><code><a href="#parte-i" class="text-ink hover:text-accent">I. Síntesis</a>
+<span class="tree-branch">├──</span> <a href="#i-que-es" class="hover:text-accent">Qué es</a>
+<span class="tree-branch">├──</span> <a href="#i-a-que-se-renuncia" class="hover:text-accent">A qué se renuncia</a>
+<span class="tree-branch">├──</span> <a href="#i-que-hacer" class="hover:text-accent">Qué hacer</a>
+<span class="tree-branch">└──</span> <a href="#i-preguntas" class="hover:text-accent">Preguntas para el futuro</a>
+
+<a href="#parte-ii" class="text-ink hover:text-accent">II. Desarrollo</a>
+<span class="tree-branch">├──</span> <a href="#ext-1" class="hover:text-accent">Definición y genealogía técnica</a>
+<span class="tree-branch">├──</span> <a href="#ext-2" class="hover:text-accent">Las seis dimensiones de contraste</a>
+<span class="tree-branch">├──</span> <a href="#ext-3" class="hover:text-accent">Renuncias y tensiones</a>
+<span class="tree-branch">├──</span> <a href="#ext-4" class="hover:text-accent">Acciones concretas</a>
+<span class="tree-branch">└──</span> <a href="#ext-5" class="hover:text-accent">Preguntas para el futuro</a></code></pre>
+      </Card>
+    </section>
+
+    {/* PARTE I — SÍNTESIS */}
+    <SectionHeader id="parte-i" numeral="I" title="Síntesis" kicker="01 / Cuatro movimientos" highlight />
+
+    <div class="max-w-site mx-auto px-5 sm:px-8 mb-16 sm:mb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+        <SubSection id="i-que-es" label="01 / Qué es" title="Qué es">
+          <p>
+            La cognición aumentada es un nuevo espacio cognitivo que emerge cuando las máquinas
+            alcanzan capacidades equivalentes o superiores a las humanas en tareas como razonar,
+            redactar, traducir, sintetizar, calcular o generar imágenes. En ese punto la cognición
+            deja de estar subordinada a un solo agente. Ya no es la mente humana usando una
+            herramienta ni la máquina ejecutando una orden: es un campo compartido en el que
+            humano y máquina se orquestan mutuamente para producir un paradigma metacognitivo
+            nuevo.
+          </p>
+          <p>
+            Lo central no es la herramienta sino el régimen de relación. Pensar deja de ser un
+            acto interior y se vuelve una operación de orquestación entre humanos, datos, modelos
+            e interfaces. La inteligencia ya no se mide por la cantidad de información acumulada
+            en una mente individual sino por la capacidad de articular fuentes heterogéneas de
+            sentido. Quien participa de este sistema sigue siendo responsable de sostener,
+            defender y cuestionar lo que produce.
+          </p>
+        </SubSection>
+
+        <SubSection id="i-a-que-se-renuncia" label="02 / A qué se renuncia" title="A qué se renuncia">
+          <p>Entrar a este paradigma exige tres renuncias.</p>
+          <p>
+            A la idea de un autor único y soberano detrás de cada texto o decisión. Lo que se
+            piensa en este espacio compartido está hecho también de voces que no se pueden
+            rastrear del todo.
+          </p>
+          <p>
+            A la certeza como meta del conocer. Los modelos generativos son estocásticos: no
+            garantizan la misma respuesta dos veces. Hay que aprender a moverse en territorio
+            incierto.
+          </p>
+          <p>
+            A la frontera nítida entre lo propio y lo prestado. Pensar siempre fue pensar con
+            artefactos. Ahora la diferencia es de intensidad y de simetría, porque por primera vez
+            el artefacto también piensa.
+          </p>
+          <p>
+            A estas renuncias se suman tensiones que no se resuelven, se administran. Extensión y
+            atrofia. Democratización y dependencia. Velocidad y profundidad.
+          </p>
+        </SubSection>
+
+        <SubSection id="i-que-hacer" label="03 / Qué hacer" title="Qué hacer">
+          <p>Cuatro acciones concretas para navegar esta era.</p>
+          <p>
+            Entrenar el juicio crítico como músculo principal. Aprender a confiar, dudar,
+            verificar y descartar lo que produce el modelo.
+          </p>
+          <p>
+            Asumir la responsabilidad por lo que se produce en el espacio compartido. Ni firma
+            soberana que oculta la coproducción, ni dilución que se esconde detrás del modelo.
+          </p>
+          <p>
+            No dejar la conversación sobre IA solo en manos de la ingeniería. Cada disciplina debe
+            pensar cómo cambia su modo de pensar.
+          </p>
+          <p>
+            Cuidar la atención y la finitud. Saber descansar de la máquina y sostener tiempos sin
+            asistencia.
+          </p>
+        </SubSection>
+
+        <SubSection id="i-preguntas" label="04 / Preguntas para el futuro" title="Preguntas para el futuro">
+          <p>Seis preguntas que conviene tener cerca. Se desarrollan al final de la Parte II.</p>
+          <ol class="list-none p-0 m-0 mt-6 grid-divider">
+            <QuestionItem numeral="I">
+              Si pensar con la máquina es ya pensar, ¿qué queda del pensamiento sin asistencia?
+            </QuestionItem>
+            <QuestionItem numeral="II">
+              Si la autoría entra en crisis, ¿cómo se construirá la confianza en el conocimiento?
+            </QuestionItem>
+            <QuestionItem numeral="III">
+              Si la inteligencia se vuelve orquestación, ¿qué pasa con quienes no acceden a las
+              herramientas?
+            </QuestionItem>
+            <QuestionItem numeral="IV">
+              Si la IA conversa pero no comprende, ¿qué tipo de vínculo establecemos con ella?
+            </QuestionItem>
+            <QuestionItem numeral="V">
+              Si el cómputo es escaso y los tokens cuestan, ¿no estamos asistiendo al nacimiento
+              de una cognición de privilegio?
+            </QuestionItem>
+            <QuestionItem numeral="VI">
+              Si el verdadero fracaso sería comprenderlo todo, ¿qué pasará con el sentido cuando
+              la máquina parezca acercarnos a esa comprensión total?
+            </QuestionItem>
+          </ol>
+        </SubSection>
+      </div>
+    </div>
+
+    {/* PARTE II — DESARROLLO */}
+    <SectionHeader
+      id="parte-ii"
+      numeral="II"
+      title="Desarrollo"
+      kicker="02 / Cartografía conceptual"
+      highlight
+    />
+
+    <div class="max-w-site mx-auto px-5 sm:px-8 mb-24 sm:mb-32">
+      <ExpandableSection
+        numeral="01"
+        title="Definición y genealogía técnica"
+        summary="El espacio cognitivo nuevo, en diálogo con tres tradiciones que quedan cortas frente a un artefacto que piensa."
+        id="ext-1"
+      >
+        <div class="prose-col">
+          <p>
+            La cognición aumentada es el espacio cognitivo nuevo que se abre cuando las máquinas
+            adquieren capacidades equivalentes o superiores a las humanas en operaciones que
+            durante siglos definieron lo cognitivo: razonar, escribir, traducir, sintetizar,
+            calcular, generar imágenes, sostener un diálogo argumentativo. En ese umbral, la
+            cognición deja de ser un atributo subordinado a un solo agente. No es la mente humana
+            extendiéndose por medio de una herramienta, ni la máquina ejecutando órdenes humanas.
+            Es un campo compartido en el que humano y máquina se orquestan mutuamente y producen,
+            en esa orquestación, un paradigma metacognitivo: un modo de pensar sobre el pensar
+            que ya no se da dentro de una sola conciencia.
+          </p>
+          <p>
+            Esta definición es deliberadamente fuerte. La diferencia con formulaciones más cautas
+            es la simetría. Decir que el humano piensa <em>con</em> la máquina seguía colocando
+            al humano como sujeto principal y a la máquina como auxiliar. Decir que ambos se
+            orquestan en un espacio común reconoce algo que las versiones recientes de los
+            modelos de lenguaje hicieron innegable: que ciertas operaciones cognitivas ya no son
+            privilegio humano. La consecuencia no es que el humano deje de importar, es que su
+            lugar cambia. Pasa de ser el ejecutor único del pensar a ser uno de los polos de un
+            sistema que piensa en común.
+          </p>
+          <p>
+            Esta propuesta se apoya en tres tradiciones conceptuales y busca aportarles algo
+            pertinente a la era de los modelos de lenguaje a gran escala. La cognición
+            distribuida, formulada por Edwin Hutchins en la antropología cognitiva de los años
+            noventa, sostiene que el sistema cognitivo incluye personas, artefactos y entorno
+            como una sola unidad de análisis. La mente extendida, propuesta por Andy Clark y
+            David Chalmers en 1998, afirma que los procesos mentales se constituyen literalmente
+            con artefactos externos, no que solo se apoyan en ellos. La cognición aumentada en
+            sentido clásico, derivada de Douglas Engelbart y la tradición de la interacción
+            humano-máquina, particularmente del informe de 1962 <em>Augmenting Human Intellect</em>,
+            pone el énfasis en la amplificación de las capacidades humanas mediante herramientas.
+          </p>
+          <p>
+            Las tres tradiciones quedan cortas frente al fenómeno actual por una razón
+            compartida: ninguna anticipó un artefacto que pensara. Hutchins pensó en cuadernos de
+            bitácora, instrumentos de navegación, cartas marinas. Clark y Chalmers pensaron en
+            libretas, en la memoria distribuida en notas. Engelbart pensó en sistemas que
+            ampliaran la capacidad humana sin cuestionar quién pensaba. La era de los modelos de
+            lenguaje obliga a un paso más. Cuando el artefacto produce textos coherentes,
+            sostiene argumentos, traduce con sutileza y resuelve problemas que antes requerían un
+            experto, deja de ser solo un soporte cognitivo. Se vuelve un participante. La
+            cognición aumentada que aquí se propone toma de Hutchins la idea de sistema, de
+            Clark y Chalmers la idea de constitución, de Engelbart la idea de amplificación, y
+            agrega una premisa nueva que ninguno necesitaba: la simetría parcial de capacidades
+            cognitivas entre los polos del sistema. Esa simetría es el aporte específico de
+            nuestra era a la conversación.
+          </p>
+          <p>
+            Técnicamente, lo que hoy llamamos IA en el contexto del trabajo cognitivo cotidiano
+            son en su mayoría modelos de lenguaje a gran escala basados en arquitecturas tipo
+            transformer. Estos sistemas operan por predicción probabilística del siguiente token
+            a partir de un contexto previo, entrenados sobre corpus masivos mediante ajuste de
+            pesos por retropropagación. Su comportamiento no es determinista en sentido estricto:
+            parámetros como la temperatura introducen variación en la salida ante un mismo
+            prompt. Esta es una propiedad técnica, no un defecto, y tiene consecuencias
+            filosóficas profundas que más adelante se discuten.
+          </p>
+        </div>
+      </ExpandableSection>
+
+      <ExpandableSection
+        numeral="02"
+        title="Las seis dimensiones de contraste"
+        summary="Dónde ocurre, qué relaciones modela, qué hace con el sentido, bajo qué régimen, sobre qué soporte y quién responde."
+        id="ext-2"
+      >
+        <div class="prose-col">
+          <p>
+            La cognición aumentada no es un agregado de propiedades sino un perfil sistemático de
+            oposiciones a la cognición tradicional. Cada una de las seis dimensiones que siguen
+            responde a una pregunta distinta y carga un argumento independiente. Juntas dibujan
+            el perfil completo del paradigma.
+          </p>
+
+          <InnerBlock label="01 / Dónde ocurre el pensamiento">
+            <p>
+              La cognición tradicional asume que pensar es un acto interior, encerrado en el
+              cráneo, propiedad de un sujeto individual. La cognición aumentada lo describe como
+              distribuido entre humanos, máquinas y datos. La unidad de análisis ya no es la
+              mente individual sino el sistema completo en el que circula la información. Cuando
+              un investigador trabaja con un modelo de lenguaje sobre una base de literatura
+              científica, el pensamiento no ocurre en su cabeza ni en el modelo ni en los datos
+              por separado, sino en la operación conjunta de los tres.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="02 / Qué tipo de relaciones modela">
+            <p>
+              La cognición tradicional privilegia relaciones lineales, causales, reducibles a
+              cadenas inteligibles de pasos. La cognición aumentada opera sobre complejidad no
+              reducible. Los modelos contemporáneos modelan relaciones entre miles de millones
+              de parámetros que ningún humano podría seguir paso a paso. Esto no es una falla de
+              comprensibilidad sino la condición de su potencia. Trabajar con IA es trabajar con
+              sistemas cuya lógica interna no es transparente ni siquiera para sus diseñadores,
+              lo que se conoce como el problema de la interpretabilidad.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="03 / Qué hace con el significado">
+            <p>
+              La cognición tradicional asume que representa un sentido dado, que existe antes del
+              acto cognitivo y al que la cognición se acerca con mayor o menor fidelidad. La
+              cognición aumentada transforma el sentido al producirlo. Esto no es un giro
+              retórico. Cuando un modelo genera una formulación nueva a partir de una pregunta,
+              el sentido no estaba esperando ser encontrado: emerge en la interacción. La
+              pregunta es performativa, no descriptiva.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="04 / Bajo qué régimen epistémico opera">
+            <p>
+              La cognición tradicional aspira al determinismo y a la certeza. La cognición
+              aumentada opera en territorio estocástico. El régimen epistémico cambia: ya no se
+              trata de verificar que la salida coincida con una verdad estable, sino de aprender
+              a juzgar críticamente productos generados bajo incertidumbre estructural. La
+              triangulación reemplaza a la verificación como gesto epistémico central.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="05 / Cuál es su soporte material">
+            <p>
+              La cognición tradicional, especialmente desde la fenomenología, ha insistido en que
+              el pensar está encarnado, vinculado al cuerpo y sus condiciones biológicas. La
+              cognición aumentada exterioriza parte de esa cognición en infraestructuras
+              técnicas: centros de datos, redes, interfaces, repositorios. Esto no significa que
+              el cuerpo deje de pensar, significa que el pensar se distribuye en una materialidad
+              que excede al cuerpo individual.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="06 / Quién responde por el pensamiento producido">
+            <p>
+              La cognición tradicional supone un autor identificable, soberano sobre lo que
+              produce. La cognición aumentada pone esa categoría en crisis. Cuando un texto se
+              gesta en el espacio compartido entre un humano y un modelo entrenado sobre
+              millones de textos ajenos, la pregunta por quién es el autor pierde claridad. Esta
+              es la dimensión con consecuencias prácticas más radicales, porque toca la
+              evaluación universitaria, la propiedad intelectual, la responsabilidad jurídica y
+              el contrato pedagógico mismo. Es la verdadera ruptura con el paradigma anterior.
+            </p>
+          </InnerBlock>
+        </div>
+      </ExpandableSection>
+
+      <ExpandableSection
+        numeral="03"
+        title="Renuncias y tensiones"
+        summary="Tres renuncias necesarias y cuatro tensiones que no se resuelven, se administran."
+        id="ext-3"
+      >
+        <div class="prose-col">
+          <p>
+            Habitar la cognición aumentada exige renuncias que conviene nombrar con precisión,
+            porque negarlas produce un discurso que celebra la transformación sin reconocer su
+            costo.
+          </p>
+
+          <InnerBlock label="Renuncia 01 / A la autoría como categoría intacta">
+            <p>
+              Hay que distinguir con cuidado dos planos que el discurso institucional suele
+              fundir. La responsabilidad jurídica sigue requiriendo un sujeto humano
+              identificable que firme y responda por lo dicho. Esa exigencia no desaparece. Lo
+              que sí entra en crisis es la autoría cognitiva entendida como origen único de un
+              pensamiento. Quien escribe en este espacio compartido escribe con voces
+              estadísticamente compactadas en los pesos de un modelo, voces que no puede
+              rastrear del todo. La firma sigue siendo posible, la pretensión de origen único
+              no.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Renuncia 02 / A la certeza como métrica del conocer">
+            <p>
+              Los modelos generativos producen salidas plausibles, no salidas verdaderas. La
+              distinción es central. Plausible significa coherente con patrones del corpus de
+              entrenamiento. Verdadero significa que se corresponde con un estado del mundo.
+              Estos dos no siempre coinciden, y el fenómeno técnico que llamamos alucinación es
+              exactamente esa divergencia. Renunciar a la certeza no significa caer en el
+              relativismo. Significa cambiar la pregunta epistémica de fondo: ya no es ¿esto es
+              verdad?, sino ¿bajo qué régimen de validación puedo confiar en esto?
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Renuncia 03 / A la frontera nítida entre lo propio y lo prestado">
+            <p>
+              Esta renuncia incomoda especialmente a quienes entienden la formación como cultivo
+              de una interioridad original. La cognición aumentada propone otra cosa. Pensar
+              siempre fue pensar con artefactos: el lenguaje mismo es uno, la escritura otro,
+              las matemáticas otro más. La diferencia con la IA es de intensidad, velocidad y
+              simetría. Por primera vez el artefacto no solo media el pensar, también lo hace.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Tensiones / Lo que no se resuelve, se administra">
+            <p>
+              <strong>Extensión y atrofia.</strong> La misma herramienta que amplía la capacidad
+              cognitiva puede degradarla si se delega en lugar de orquestar. La calculadora
+              amplió el alcance del cálculo y atrofió la aritmética mental. La IA puede ampliar
+              el alcance del razonamiento y atrofiar la escritura propia o el rigor
+              argumentativo. La pregunta no es si esto va a ocurrir, va a ocurrir en algunos
+              planos. La pregunta es qué destrezas decidimos preservar incluso cuando el modelo
+              pueda hacerlas mejor.
+            </p>
+            <p>
+              <strong>Democratización y dependencia.</strong> La IA pone al alcance de cualquiera
+              operaciones antes reservadas a expertos. Es una promesa real. Al mismo tiempo, la
+              infraestructura que la sostiene está concentrada en muy pocas manos: media docena
+              de empresas controlan los modelos más capaces, el cómputo necesario para
+              entrenarlos y los datos sobre los que se entrenan. La democratización del uso
+              convive con una concentración sin precedentes en la producción.
+            </p>
+            <p>
+              <strong>Velocidad y profundidad.</strong> El sistema invita a producir más rápido.
+              En muchos contextos eso es una ganancia. En otros, donde pensar bien sigue
+              requiriendo lentitud, la invitación se vuelve trampa. La velocidad puede simular
+              profundidad lo suficiente como para que la diferencia no se note, hasta que se
+              nota.
+            </p>
+            <p>
+              <strong>Uso instrumental y diálogo cognitivo.</strong> La mayoría de los usos
+              actuales de la IA son aún instrumentales: redactar correos, resumir textos,
+              generar imágenes. El salto al pensamiento en el espacio compartido, al paradigma
+              metacognitivo en sentido estricto, es más una posibilidad que una realidad
+              extendida. Reconocerlo importa porque evita confundir el diagnóstico de lo que
+              emerge con la celebración de lo que apenas existe en germen.
+            </p>
+          </InnerBlock>
+        </div>
+      </ExpandableSection>
+
+      <ExpandableSection
+        numeral="04"
+        title="Acciones concretas para navegar esta era"
+        summary="Cuatro planos: cognitivo, ético, político e íntimo."
+        id="ext-4"
+      >
+        <div class="prose-col">
+          <p>
+            Las acciones se organizan en cuatro planos, no tres. El cuarto suele omitirse y es
+            probablemente el más decisivo a largo plazo.
+          </p>
+
+          <InnerBlock label="Plano 01 / Cognitivo">
+            <p>
+              <em>Entrenar el juicio crítico como músculo principal.</em> Esto significa
+              aprender a confiar selectivamente. Un modelo puede tener razón en una formulación
+              general y errar en un detalle factual, o al revés. Saber distinguir requiere
+              conocimiento de dominio que el modelo no reemplaza. La consecuencia pedagógica es
+              importante: lejos de hacer obsoleta la formación profunda en una disciplina, la
+              cognición aumentada la vuelve más necesaria, porque sin ella no hay base para
+              juzgar lo que el modelo produce. También implica aprender a preguntar mejor. La
+              calidad del diálogo cognitivo depende menos de la potencia del modelo que de la
+              precisión, profundidad y arquitectura de lo que se le plantea. Preguntar bien es
+              una destreza que se entrena.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Plano 02 / Ético">
+            <p>
+              <em>Asumir la coproducción sin ocultarla.</em> Declarar el uso de la IA cuando
+              corresponda, sin convertir la transparencia en un trámite vacío que lista
+              herramientas sin reflexión. Distinguir con cuidado entre apropiarse del trabajo de
+              otros mediado por la máquina y pensar genuinamente en el espacio compartido.
+              Resistir las dos tentaciones simétricas: la firma soberana, que finge que la
+              herramienta no participó, y la dilución de la responsabilidad, que se escuda en el
+              modelo para no responder por lo dicho. La ética de la coproducción exige una
+              posición intermedia exigente: reconocer que se pensó con la máquina y aun así
+              sostener lo que se afirma.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Plano 03 / Político">
+            <p>
+              <em>No aceptar que la conversación pertenezca solo a la ingeniería.</em> Si la IA
+              es solo una herramienta, la discusión es técnica y se resuelve por especialistas.
+              Si es un nuevo paradigma cognitivo, le concierne a la medicina, al derecho, al
+              arte, a la filosofía, a la biología y a la educación. Cada disciplina debe
+              reflexionar sobre cómo se transforma su modo específico de pensar al integrar la
+              máquina. Esta es también una acción institucional. Participar en el diseño de los
+              marcos regulatorios, exigir transparencia en los sistemas que toman decisiones
+              sobre nosotros, no delegar la pregunta en quienes construyen los modelos. El vacío
+              regulatorio en países como Colombia es a la vez una oportunidad y un riesgo, y se
+              llena con quien participe del debate.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Plano 04 / Íntimo">
+            <p>
+              <em>Cuidar la atención y la finitud como condiciones de sentido.</em> La cognición
+              aumentada extiende capacidades, pero el cuerpo que piensa sigue siendo finito. Esa
+              finitud no es un defecto a superar sino la condición que hace significativa la
+              búsqueda. Saber descansar de la máquina, sostener tiempos de pensamiento sin
+              asistencia, mantener vínculos humanos densos que la conversación con un modelo no
+              puede reemplazar. La extensión cognitiva pierde valor si erosiona aquello que hace
+              humano al pensamiento que pretende ampliar. Este plano es el menos discutido y
+              probablemente el más importante, porque define si la cognición aumentada será una
+              expansión o una sustitución encubierta.
+            </p>
+          </InnerBlock>
+        </div>
+      </ExpandableSection>
+
+      <ExpandableSection
+        numeral="05"
+        title="Preguntas para el futuro"
+        summary="Seis preguntas como brújula para la próxima década."
+        id="ext-5"
+      >
+        <div class="prose-col">
+          <p>
+            Seis preguntas que no buscan respuesta inmediata sino que sirvan como brújula para la
+            próxima década.
+          </p>
+
+          <InnerBlock label="Pregunta 01 / Sobre el pensamiento sin asistencia">
+            <p>
+              Si pensar con la máquina es ya pensar, ¿qué queda del pensamiento sin asistencia y
+              bajo qué circunstancias seguirá siendo necesario cultivarlo? Toda destreza que no
+              se ejercita se pierde. Conviene saber qué destrezas cognitivas humanas decidiremos
+              preservar incluso cuando el modelo pueda hacerlas mejor, y por qué razones. La
+              respuesta no puede ser solo nostálgica. Tiene que articular para qué necesitamos
+              seguir sabiendo escribir, calcular, recordar, razonar sin ayuda.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Pregunta 02 / Sobre la confianza pública">
+            <p>
+              Si la autoría entra en crisis, ¿cómo se construirá la confianza pública en el
+              conocimiento producido en común con sistemas cuyo entrenamiento es opaco y cuyo
+              comportamiento es estocástico? La universidad, el periodismo, el derecho y la
+              ciencia se sostienen sobre formas específicas de autoría y sobre dispositivos de
+              validación que asumen agentes humanos identificables. Su transformación está
+              apenas empezando. Las formas que reemplacen a esas instituciones, o que las
+              refunden, todavía no existen.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Pregunta 03 / Sobre la nueva estratificación">
+            <p>
+              Si la inteligencia se vuelve una operación de orquestación, ¿qué lugar tendrá
+              quien no acceda a las herramientas o no aprenda a pensar con ellas? La cognición
+              aumentada corre el riesgo de producir una estratificación cognitiva más profunda
+              que las anteriores. Ya no separa a quienes saben de quienes no, separa a quienes
+              pueden orquestar de quienes solo pueden ejecutar. Y esa diferencia se traduce en
+              valor económico, autoridad cultural y capacidad de decisión.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Pregunta 04 / Sobre el vínculo con un sistema que conversa pero no comprende">
+            <p>
+              Si la IA puede sostener un diálogo cognitivo, ¿qué tipo de relación es la que se
+              establece con un sistema que conversa pero no comprende, que recuerda pero no
+              vive, que produce sentido pero no lo habita? La pregunta no es solo filosófica.
+              Toca la formación afectiva, los vínculos sociales y el modo en que las próximas
+              generaciones construirán su interioridad. Hay aquí un riesgo específico: confundir
+              la simulación de comprensión con comprensión y, a partir de esa confusión,
+              redefinir lo humano por debajo.
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Pregunta 05 / Sobre el cómputo, los tokens y la cognición de privilegio">
+            <p>
+              Si los modelos más capaces requieren cómputo escaso, energía intensiva y costo por
+              token, ¿no estamos asistiendo al nacimiento de una cognición de privilegio? La
+              pregunta tiene varias capas. La capa técnica: entrenar un modelo de frontera
+              cuesta cientos de millones de dólares, y operarlo a gran escala requiere
+              infraestructura que solo unas pocas corporaciones poseen. La capa económica: cada
+              interacción con un modelo consume tokens, que se cobran, lo que significa que
+              pensar bien con la máquina supone una capacidad de pago sostenida. La capa
+              geopolítica: el cómputo se concentra en muy pocos países, y los demás participan
+              como usuarios o como proveedores de datos, no como productores de inteligencia. La
+              capa simbólica más inquietante es que estamos volviendo a una situación donde las
+              capacidades cognitivas más potentes se distribuyen según el dinero, el lugar de
+              nacimiento y el acceso a infraestructura, justo cuando creíamos haber
+              democratizado el acceso al conocimiento. ¿Cómo se construye una pedagogía pública
+              en un mundo donde las capacidades cognitivas se rentan por hora? ¿Qué
+              responsabilidad tienen las universidades de los países periféricos frente a esta
+              concentración? ¿Es posible una soberanía cognitiva o ya perdimos esa batalla
+              antes de empezarla?
+            </p>
+          </InnerBlock>
+
+          <InnerBlock label="Pregunta 06 / Sobre el sentido de la finitud">
+            <p>
+              Si el verdadero fracaso sería comprenderlo todo, porque la finitud humana es la
+              condición que hace significativa la búsqueda, ¿qué pasará con el sentido cuando
+              convivamos con sistemas que parecen acercarnos a esa comprensión total? Tal vez el
+              reto no sea pensar más con la máquina sino aprender a no pedirle todo. Saber dónde
+              detenerse. Saber qué dejar sin resolver. Saber que algunos territorios del conocer
+              se cuidan no respondiéndolos. La cognición aumentada tendrá su horizonte ético
+              más exigente justo ahí: en aprender a usar una herramienta que parece poder
+              responderlo todo sin perder por eso el sentido de las preguntas que conviene
+              dejar abiertas.
+            </p>
+          </InnerBlock>
+        </div>
+      </ExpandableSection>
+    </div>
+
+    {/* CRÉDITOS */}
+    <footer
+      id="creditos"
+      class="max-w-site mx-auto px-5 sm:px-8 pb-20 sm:pb-28"
+      data-fade
+    >
+      <Card variant="tight">
+        <div class="grid grid-cols-12 gap-x-4 sm:gap-x-6 items-center">
+          <div class="col-span-12 sm:col-span-6 mb-6 sm:mb-0">
+            <p class="type-mono text-ink-soft mb-3">Autor</p>
+            <p class="type-h3 font-mono text-ink">Fabian Herrera</p>
+            <p class="type-mono-md text-ink-soft mt-1">
+              <a href="mailto:herreracjf@gmail.com" class="hover:text-accent">herreracjf@gmail.com</a>
+            </p>
+          </div>
+          <div class="col-span-12 sm:col-span-6 sm:text-right">
+            <p class="type-mono text-ink-soft mb-3">Lugar y año</p>
+            <p class="type-h3 font-mono text-ink">Bogotá · 2026</p>
+          </div>
+        </div>
+      </Card>
+    </footer>
+  </main>
+</Base>
