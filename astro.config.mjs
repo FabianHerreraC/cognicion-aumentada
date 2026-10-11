@@ -1,8 +1,9 @@
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [tailwind({ applyBaseStyles: false })],
+  compressHTML: true,
+  vite: { plugins: [tailwindcss()] },
   site: 'https://FabianHerreraC.github.io',
   base: '/cognicion-aumentada',
 });
